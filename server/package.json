@@ -1,0 +1,59 @@
+{
+  "name": "books-server",
+  "version": "1.0.0",
+  "description": "Backend services for dummy books listing app",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check:types": "tsc --noEmit",
+    "build": "node ./build.js",
+    "build:docker:prod": "docker build . -t my-fastify-app",
+    "start": "node build/index.js",
+    "dev": "nodemon | pino-pretty --colorize",
+    "pretest": "npm run build",
+    "test": "NODE_ENV=test tap",
+    "test:watch": "NODE_ENV=test tap -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ijuani/dummy-books.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "nodejs",
+    "fastify",
+    "typescript"
+  ],
+  "author": "Juan Cruz Leiva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ijuani/dummy-books/issues"
+  },
+  "homepage": "https://github.com/ijuani/dummy-books#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "fastify": "^4.9.2",
+    "fastify-plugin": "^4.3.0",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.3",
+    "@types/pg": "^8.6.5",
+    "@types/tap": "^15.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "esbuild": "^0.14.54",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "glob": "^8.0.3",
+    "nodemon": "^2.0.20",
+    "pino-pretty": "^8.1.0",
+    "prettier": "^2.7.1",
+    "tap": "^16.3.0",
+    "typescript": "^4.8.4"
+  }
+}
